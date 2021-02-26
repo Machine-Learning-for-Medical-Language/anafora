@@ -660,7 +660,7 @@ def getProjectSetting():
     if projectSetting == None:
         parseFile = os.path.join(settings.ANAFORA_PROJECT_FILE_ROOT, settings.ANAFORA_PROJECT_SETTING_FILENAME)
         if os.path.isfile(parseFile) != True:
-            from django.core.exceptions import ImpoperlyConfigured
+            from django.core.exceptions import ImproperlyConfigured
             raise ImproperlyConfigured, "Error loading ANAFORA_PROJECT_SETTING_FILENAME in web/settings.py file. Please check the value of ANAFORA_PROJECT_FILE_ROOT, ANAFORA_PROJECT_SETTING_FILENAME accordingly"
         projectSetting = ProjectSetting()
         projectSetting.parseFromFile(parseFile)
